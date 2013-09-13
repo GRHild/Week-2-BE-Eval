@@ -83,12 +83,18 @@ describe Tennis::Player do
     context 'when points player1 = points of player 2' do
       it 'returns deuce' do
         player.points = 3
-        player.opponent.points = 3 
+        player.opponent.points = 3
 
         expect(player.score).to eq('deuce')
       end
     end
 
     context 'when points of player are 1 greater than the opponent' do
+      it 'returns advantage' do
+        player.points > player.opponent.points
+
+        expect(player.score).to eq('advantage')
+      end
+    end
   end
 end

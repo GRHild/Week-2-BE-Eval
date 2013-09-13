@@ -48,7 +48,7 @@ module Tennis
       return 'love' if @points == 0
       return 'fifteen' if @points == 1
       return 'thirty' if @points == 2
-      return 'deuce' if @points >= 4 && @points == @opponent.points
+      return 'deuce' if @points >= 3 && @points == @opponent.points
       return 'forty' if @points == 3
       # return 'advantage' if @points.player1 > @points.player2 || @points.player2 > @points.player1
       # return 'win' if @points.player1 > @points.player2 + 2 || @points.player2 > @points.player1 + 2
