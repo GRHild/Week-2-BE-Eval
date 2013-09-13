@@ -16,6 +16,7 @@ module Tennis
     # winner - The Integer (1 or 2) representing the winning player.
     #
     # Returns the score of the winning player. 
+    # wins_ball method determines who wins the ball and increments their score by 1
     def wins_ball(winner)
       if winner == 1
         @player1.record_won_ball!
@@ -54,6 +55,7 @@ module Tennis
     end
   end
 end
+
 
 
 
