@@ -1,6 +1,6 @@
 module Tennis
   class Game
-    attr_accessor :player1, :player2
+    attr_accessor :player1, :player2, :winner
 
     def initialize
       @player1 = Player.new
@@ -8,6 +8,7 @@ module Tennis
 
       @player1.opponent = @player2
       @player2.opponent = @player1
+      @winner = winner
     end
 
     # Records a win for a ball in a game.
@@ -42,6 +43,9 @@ module Tennis
       return 'fifteen' if @points == 1
       return 'thirty' if @points == 2
       return 'forty' if @points == 3
+      return 'deuce' if @points.player1 == @points.player2
+      return 'advantage' if @points.player1 > @points.player2 || @points.player2 > @points.player1
+      return 'win' if @points.player > @points.player2 + 2 || @points.player2 > @points.player1 + 2
     end
   end
 end
