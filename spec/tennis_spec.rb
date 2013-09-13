@@ -91,9 +91,19 @@ describe Tennis::Player do
 
     context 'when points of player are 1 greater than the opponent' do
       it 'returns advantage' do
+        player.opponent.points = 3
         player.points > player.opponent.points
+        player.opponent.points > player.points
 
         expect(player.score).to eq('advantage')
+      end
+    end
+
+    context 'When points of player are 2 greater than the opponent' do
+      it 'returns win' do
+        player.opponent.points = 3
+        player.points > player.opponent.points + 2
+        player.opponent > player.points + 2
       end
     end
   end
